@@ -1,0 +1,4 @@
+INSERT INTO course (course_nm, course_ds, course_days, start_dt, end_dt)
+VALUES ('Cullinary 101: Intro to Sautéing Poultry', 'This course builds the foundation of cooking poultry using the sauté method. Here you will discover the origins of sauté and why it is used to prepare various meats for consumption.', 'M W', '20171002 17:30', '20171016 21:30'),
+('Restaurant Management 203: Front of House', 'This course is focused on providing each student with an understanding of the importance of an organized Front-of-House and even puts the student in the position caring for their own example.', 'M W', '20171002 17:30', '20171016 21:30'),
+('Culinary 205: Health Code Regulations', 'This course helps the student to familiarize themselves with government regulations regarding public health and safety in the restaurant environment.', 'M W', '20171002 17:30', '20171016 21:30');
