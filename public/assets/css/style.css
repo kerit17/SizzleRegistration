@@ -91,8 +91,11 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
-#student-entry {
+.reg-btn {
     margin: 15px 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 10px;
 }
 
 #admin-entry {
@@ -239,6 +242,7 @@ a.pure-button-primary {
 
 .form-container {
     width: 60%;
+    max-width: 600px;
     margin: 60px auto auto auto;
     background: rgba(0, 0, 0, 0.6);
     padding: 30px 20px 30px 20px;
@@ -253,6 +257,10 @@ a.pure-button-primary {
 .pure-form-message {
     color: white;
     text-shadow: 1px 1px #d66b1f;
+}
+
+select {
+    width: 100%;
 }
 
 /* This is the class used for the dark-background areas. */
