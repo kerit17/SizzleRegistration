@@ -34,23 +34,32 @@
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="/index" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
-                <li class="pure-menu-item"><a href="/student" class="pure-menu-link">Register</a></li>
-                <li class="pure-menu-item pure-menu-selected"><a href="/admin" class="pure-menu-link">Admin</a></li>
+                <li class="pure-menu-item pure-menu-selected"><a href="/student" class="pure-menu-link">Register</a></li>
+                <li class="pure-menu-item"><a href="/admin" class="pure-menu-link">Admin</a></li>
             </ul>
         </div>
     </div>
     <div class="form-container">
         <form class="pure-form">
             <fieldset>
-                <legend class="legend-message">Enter Email and Password to begin administration.</legend>
-                
-                <input type="email" placeholder="Email" required>
-                <span class="pure-form-message">This is a required field.</span>
-                
-                <input type="password" placeholder="Password" required>
-                <span class="pure-form-message">This is a required field.</span>
+                <label for="course">Course Name</label>
+                <br>
+                <select id="course">
+                    <option>Select Course from Menu</option>
+                    <option>12116 Culinary 101: Intro to Sauteing Poultry</option>
+                    <option>22351 Restaurant Management 203: Front of House</option>
+                    <option>25933 Culinary 205: Health Code Regulations</option>
+                </select>
+                <br><br>
+                <label for="course-number">Course ID #</label>
+                <input id="courseNumber" type="number" placeholder="Enter course ID# Ex. 22345">
+                <br><br>
+                <label for="course">Course Days</label>
+                <br>
+                <input id="courseDays" type="text" placeholder="Enter MW or TTh">
 
-                <a href="/admin-portal" id="admin-sign-in" class="pure-button pure-button-primary reg-btn">Sign In</a>
+                <a href="#" id="admin-search-btn" class="pure-button pure-button-primary reg-btn">Search open courses</a>
+                <a href="#" id="admin-all-courses-btn" class="pure-button pure-button-primary reg-btn">View All Courses</a>
             </fieldset>
         </form>
     </div>
