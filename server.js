@@ -16,8 +16,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static('public'));
 
 // ROUTER
-require("./controller/apiRoutes")(app);
 require("./controller/htmlRoutes")(app);
+require("./controller/courseApiRoutes")(app);
+require("./controller/administratorApiRoutes")(app);
+require("./controller/studentApiRoutes")(app);
+require("./controller/locationApiRoutes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
