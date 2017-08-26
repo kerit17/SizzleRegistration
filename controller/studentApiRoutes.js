@@ -7,6 +7,7 @@
 
 // Requiring our models
 var db = require("../models");
+var path = require("path");
 
 //Routing 
 module.exports = function(app) {
@@ -51,9 +52,11 @@ module.exports = function(app) {
             }
         }).then(function(dbStudent) {
             if (dbStudent === null) {
-                res.send("Incorrect email or password!");
+                res.send(false);
         }
-          
+            else{
+                res.send(true); 
+            }          
         });
        
     });

@@ -31,7 +31,11 @@ $("#student-sign-in").on("click", function(event){
     var currentURL = window.location.origin;
 
     $.post("/api/student", currentStudent, function(data){
-    // .done(function(data){
-        console.log(data)
+        if (data === true){
+            window.location.href = "/registration";
+        }
+        else {
+            alert("Incorrect email or password.")
+        }
     });
 });
