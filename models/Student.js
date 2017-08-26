@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes)
         },
         str_adr_1: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         str_adr_2: {
             type: DataTypes.STRING,
@@ -26,15 +26,15 @@ module.exports = function(sequelize, DataTypes)
         },
         city: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         state: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         zip_cd: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [0, 5]
             } 
