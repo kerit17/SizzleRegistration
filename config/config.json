@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Tuber007!",
+    "password": "P@ssword1",
     "database": "sizzleRegistrationDb",
     "host": "127.0.0.1",
     "dialect": "mysql"
