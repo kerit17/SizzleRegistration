@@ -194,6 +194,13 @@ a.pure-button-primary {
     line-height: 1em;
 }
 
+.custom-about {
+    color: white;
+    background-color: rgba(214, 107, 31, 0.8);
+    margin-top: 50px;
+    padding: 15px;
+}
+
 .slogan {
     font-family: 'Arvo', serif;
     font-size: 19px;
@@ -243,11 +250,13 @@ a.pure-button-primary {
 
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-    color: #1f8dd6;
+    color: #43d43a;
+    text-shadow: none;
 }
-    .content-subhead i {
-        margin-right: 7px;
-    }
+
+.content-subhead i {
+    margin-right: 7px;
+}
 
 .form-container {
     width: 60%;
