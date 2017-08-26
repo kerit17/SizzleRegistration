@@ -42,4 +42,16 @@ module.exports = function(app) {
             res.json(dbStudent);
         });
     });
+
+    app.get("/api/student", function(req, res) {
+
+        db.Student.findOne({
+            where: {
+                email: req.body.email,
+                password: req.body.password
+            }
+        }).then(function(dbStudent) {
+            res.json(dbStudent);
+        });
+    });
 };
