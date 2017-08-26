@@ -176,27 +176,36 @@ a.pure-button-primary {
     text-transform: uppercase;
 }
 
+.pure-img {
+    margin: auto;
+}
+
 /* This is the main heading that appears on the blue section */
 .splash-head {
     font-family: 'Arvo', serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     background: rgba(214, 107, 31, 0.8);
     color: white;
     border: 3px solid white;
-    padding: 1em 1.6em;
+    padding: .5em 1em;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
+}
+
+.slogan {
+    font-family: 'Arvo', serif;
+    font-size: 19px;
+    border: 2px solid white;
+    border-radius: 3px;
 }
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
     color: white;
     background: rgba(214, 107, 31, 1);
-    text-shadow: 1px 1px #d66b1f;
     letter-spacing: 0.05em;
-    opacity: 0.8;
 }
 
 /*
