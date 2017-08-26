@@ -1,23 +1,25 @@
 
-var newStudent;
+// var newStudent;
 
-$("#student-sign-up").on("click", function(event){
+$("#newStudentSubmit").on("click", function(event){
     event.preventDefault();
 
-    newStudent = {
-    fName : $("#fName").val().trim(),
-    lName : $("#lName").val().trim(),
+    var newStudent = {
+    fst_nm : $("#fName").val().trim(),
+    lst_nm : $("#lName").val().trim(),
     email : $("#email").val().trim(),
-    phone : $("#phone").val().trim(),
+    contact_no : $("#phone").val().trim(),
     password : $("#password").val().trim()
 	};
 
-    var currentURL = window.location.origin;
+    // var currentURL = window.location.origin;
+        console.log(newStudent)
 
-//     $.post(currentURL + "/api/student");
-//     // .done(function(data){
-//     	console.log(data);
-//     });)
+    $.post("/api/newStudent", newStudent, function(data){
+        if (data){
+            window.location.href = "/registration";
+        }
+    });
 });
 
 $("#student-sign-in").on("click", function(event){

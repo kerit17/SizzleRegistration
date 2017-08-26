@@ -28,9 +28,12 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/students", function(req, res) {
+    //create new student record in database
+    app.post("/api/newStudent", function(req, res) {
+        console.log(req.body);
         db.Student.create(req.body).then(function(dbStudent) {
             res.json(dbStudent);
+
         });
     });
 
