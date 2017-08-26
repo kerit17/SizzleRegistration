@@ -43,15 +43,18 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/student", function(req, res) {
-
+    app.post("/api/student", function(req, res) {
         db.Student.findOne({
             where: {
                 email: req.body.email,
                 password: req.body.password
             }
         }).then(function(dbStudent) {
-            res.json(dbStudent);
+            if (dbStudent === null) {
+                res.send("Incorrect email or password!");
+        }
+          
         });
+       
     });
 };

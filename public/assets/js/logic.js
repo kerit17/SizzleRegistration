@@ -14,10 +14,10 @@ $("#student-sign-up").on("click", function(event){
 
     var currentURL = window.location.origin;
 
-    $.post(currentURL + "/api/student");
-    .done(function(data){
-    	console.log(data);
-    });
+//     $.post(currentURL + "/api/student");
+//     // .done(function(data){
+//     	console.log(data);
+//     });)
 });
 
 $("#student-sign-in").on("click", function(event){
@@ -30,6 +30,8 @@ $("#student-sign-in").on("click", function(event){
 
     var currentURL = window.location.origin;
 
-    $.post(currentURL + "/api/student", currentStudent, function(data){
+    $.post("/api/student", currentStudent, function(data){
+    // .done(function(data){
+        console.log(data)
     });
 });
