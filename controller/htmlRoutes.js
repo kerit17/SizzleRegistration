@@ -32,6 +32,18 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "/../public/student-sign-up.html")); 
   });
 
+  app.get("/course-info", function(req, res){ 
+    res.sendFile(path.join(__dirname, "/../public/course-info.html")); 
+  });
+
+  app.get("/currently-registered", function(req, res){ 
+    res.sendFile(path.join(__dirname, "/../public/currently-registered.html")); 
+  });
+
+  app.get("/admin-add-course", function(req, res){ 
+    res.sendFile(path.join(__dirname, "/../public/admin-add-course.html")); 
+  });
+
   app.get("", function(req, res){ 
     res.sendFile(path.join(__dirname, "/../public/index.html")); 
   }); 

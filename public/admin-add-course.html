@@ -44,24 +44,24 @@
     <div class="form-container">
         <form class="pure-form">
             <fieldset>
-                <label for="courses" class="pure-checkbox">
-                <input id="optionOne" type="checkbox" value="">
-                12116 Culinary 101: Intro to Sauteing Poultry
-                </label>
-
-                <label for="courses" class="pure-checkbox">
-                <input id="optionTwo" type="checkbox" value="">
-                22351 Restaurant Management 203: Front of House
-                </label>
-
-                <label for="courses" class="pure-checkbox">
-                <input id="optionThree" type="checkbox" value="">
-                25933 Culinary 205: Health Code Regulations
-                </label>
-
-                <a href="/admin-add-course" id="addCoursePageBtn" class="pure-button pure-button-primary reg-btn">Add Course</a>
-                <button type="submit" id="removeCourseAdmin" class="pure-u-1 pure-u-md-1-4 pure-button pure-button-primary">Drop Course</button>                
-                <a href="/admin-portal" id="adminAllCoursesBtn" class="pure-button pure-button-primary reg-btn">Refresh List</a>
+                <label for="course-name">Course Name</label>
+                <br>
+                <input id="newCourseName" type="text" placeholder="Enter Course Name" required>
+                <br><br>
+                <label for="course-description">Course Description</label>
+                <br>
+                <input id="newCourseDescription" type="text" placeholder="Enter Course Description" required>
+                <br><br>
+                <label for="course-description">Course Days</label>
+                <br>
+                <select id="newCourseDays" required>
+                    <option>Select Days from Menu</option>
+                    <option>MW</option>
+                    <option>TTH</option>
+                </select>
+                <br><br>
+                <button type="submit" id="adminAddCourse" class="pure-u-1 pure-u-md-1-4 pure-button pure-button-primary">Add Course</button>                
+                <a href="/admin-portal" id="admin-all-courses-btn" class="pure-button pure-button-primary reg-btn">View Courses</a>
             </fieldset>
         </form>
     </div>
