@@ -13,21 +13,35 @@ var db = require("../models");
 module.exports = function(app) {
 
     // GET route for getting all of the courses
+    // app.get("/api/courses", function(req, res) {
+    //     var query = {};
+    //     if (req.query.course_id) {
+    //         query.CourseId = req.query.course_id;
+    //     }
+        // Here we add an "include" property to our options in our findAll query
+        // We set the value to an array of the models we want to include in a left outer join
+        // In this case, just db.Adminstrator
+    //     db.Course.findAll({
+    //         where: query,
+    //         include: [db.Adminstrator]
+    //     }).then(function(dbCourse) {
+    //         res.json(dbCourse);
+    //     });
+    // });
+
+    // GET route for getting all of the courses
     app.get("/api/courses", function(req, res) {
-        var query = {};
-        if (req.query.course_id) {
-            query.CourseId = req.query.course_id;
-        }
+        
         // Here we add an "include" property to our options in our findAll query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Adminstrator
         db.Course.findAll({
-            where: query,
-            include: [db.Adminstrator]
         }).then(function(dbCourse) {
             res.json(dbCourse);
         });
     });
+
+
 
     // Get rotue for retrieving a single course
     app.get("/api/courses/:id", function(req, res) {
@@ -70,6 +84,17 @@ module.exports = function(app) {
             }
         }).then(function(dbCourse) {
             res.json(dbCourse);
+        });
+    });
+
+    app.get("/api/registration", function(req, res) {
+        
+        // Here we add an "include" property to our options in our findAll query
+        // We set the value to an array of the models we want to include in a left outer join
+        // In this case, just db.Adminstrator
+        db.Course.findAll({
+        }).then(function(dbCourse) {
+            res.send(dbCourse);
         });
     });
 };
