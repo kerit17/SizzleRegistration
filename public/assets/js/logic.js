@@ -41,3 +41,23 @@ $("#student-sign-in").on("click", function(event){
         }
     });
 });
+
+$("#admin-sign-in").on("click", function(event){
+    event.preventDefault();
+    
+    var currentAdmin = {
+        email : $("#email").val().trim(),
+        password : $("#password").val().trim()
+    }
+
+    var currentURL = window.location.origin;
+
+    $.post("/api/admin", currentAdmin, function(data){
+        if (data === true){
+            window.location.href = "/admin-portal";
+        }
+        else {
+            alert("Incorrect email or password.")
+        }
+    });
+});

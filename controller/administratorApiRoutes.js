@@ -51,4 +51,21 @@ module.exports = function(app) {
             res.json(dbAdministrator);
         });
     });
+
+    app.post("/api/admin", function(req, res) {
+        db.Administrator.findOne({
+            where: {
+                email: req.body.email,
+                password: req.body.password
+            }
+        }).then(function(dbAdministrator) {
+            if (dbAdministrator === null) {
+                res.send(false);
+        }
+            else{
+                res.send(true); 
+            }          
+        });
+       
+    });
 };
