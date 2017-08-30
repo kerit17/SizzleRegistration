@@ -23,8 +23,8 @@ describe('Load a Page', function() {
         })
     })
 
-    describe('/ (Button Clicking)', () => {
-        it('should click the button element', done => {
+    describe('/ (Click Sign In)', () => {
+        it('should click the sign in button element', done => {
         // your actual testing urls will likely be `http://localhost:port/path`
         nightmare.goto('http:/localhost:8080/student')
         .wait(2000)
@@ -37,13 +37,34 @@ describe('Load a Page', function() {
 })
 
 
-    describe('/ (Button Clicking)', () => {
-        it('should click the button element', done => {
+    describe('/ (New Student Button)', () => {
+        it('should click the new student button element', done => {
         // your actual testing urls will likely be `http://localhost:port/path`
         nightmare.goto('http:/localhost:8080/student')
-        .wait(2000)
+        .wait(1000)
         .click('#student-sign-up')
-        .wait(2000)
+        .wait(1000)
+        .end()
+        .then(function (result) { done() })
+        .catch(done)
+    })
+})
+
+    describe('/ (New Student Button)', () => {
+        it('should click the new student button element', done => {
+        // your actual testing urls will likely be `http://localhost:port/path`
+        nightmare.goto('http:/localhost:8080/student')
+        .wait(1000)
+        .click('#student-sign-up')
+        .wait(1000)
+        .type('#fName', 'Bobby')
+        .type('#lName', 'Tester')
+        .type('#email', 'bobbyt@aol.com')
+        .type('#phone', '111-111-1111')
+        // .type('#passsword', 'test')
+        .wait(1000)
+        .click('#newStudentSubmit')
+        .wait(1000)
         .end()
         .then(function (result) { done() })
         .catch(done)
