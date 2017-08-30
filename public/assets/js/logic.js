@@ -113,26 +113,31 @@ $.get("/api/registration", function(data){
     }
 });
 
-$("#newCourseRegistration").on ("click", function(event){
+$("#newCourseRegistration").on("click", function(event) {
     event.preventDefault();
     newCourseReg = $(".pure-checkbox");
+    console.log(newCourseReg);
     console.log(newCourseReg.length);
-    var registrationStr = "";
-    
-        for (var i=0; i < newCourseReg.length; i++) {
-            var val = $('input:checked').val();
-            if (val){
-                console.log(val);
-                registrationStr += "<div> <label for='courses' class='pure-checkbox'>" +
-                "<input id='' type='checkbox' name='courseCheckbox' value='" + val + "'>" + 
-                "</label> </div>";       
-                }
-            }
-    
-        // window.location.href = "/currently-registered";
-        $("#newCourseRegistration").append(registrationStr); 
-        // console.log("newCourseReg: " , newCourseReg);
-        // console.log("registrationStr: " , registrationStr);
-        // var thingy = JSON.stringify(newCourseRegistration);
-        // console.log(thingy);
-    });
+    var registrationStr = "<form class='pure-form'>";
+    for (var i = 0; i < newCourseReg.length; i++) {
+        if (newCourseReg[i].children.courseCheckbox.checked) 
+        {
+            var val = newCourseReg[i].innerText;
+            console.log("val: ", val);
+            registrationStr += "<fieldset><label for='courses' class='pure-checkbox'>" +
+            "<input id='' type='checkbox' name='courseCheckbox' value='" + val + "'>" + 
+            val + "</input></label></fieldset>";       
+        }
+    }
+    registrationStr += "</form><button type='submit' id='removeCourseStudent' class='pure-u-1 pure-u-md-1-4 pure-button pure-button-primary'>Drop Course</button>";
+    console.log(registrationStr);
+    $("#Registration").hide();
+    $("#Registered").html(registrationStr); 
+    //$("#currentlyRegisteredData").html(registrationStr); 
+    //window.location.href = "/currently-registered";
+});
+
+$(document).on("click", "#removeCourseStudent", function(event) {
+    event.preventDefault();
+    $("input:checked").parent().remove();
+});
