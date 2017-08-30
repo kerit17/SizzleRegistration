@@ -1,5 +1,4 @@
-
-// var newStudent;
+var newCourseRegistration = {};
 
 $("#newStudentSubmit").on("click", function(event){
     event.preventDefault();
@@ -67,8 +66,8 @@ $("#admin-sign-in").on("click", function(event){
         if (data) {
             var htmlStr = "";
             for (var i = 0; i < data.length; i++) {
-                htmlStr += "<fieldset> <div id='" + [i] + "'><label for='courses' class='pure-radio'>" +
-                         "<input id='" + [i] + "' type='radio' name='courseRadio' value='" + data[i].crs_nm + "'>" +
+                htmlStr += "<fieldset> <div id='" + [i] + "'><label for='courses' class='pure-checkbox'>" +
+                         "<input id='" + [i] + "' type='checkbox' name='courseRadio' value='" + data[i].crs_nm + "'>" +
                          data[i].crs_nm + "</label></div> </fieldset>"         
             }
             $("#courseData").append(htmlStr);
@@ -77,7 +76,7 @@ $("#admin-sign-in").on("click", function(event){
 
 $("#removeCourseAdmin").on ("click", function(event){
     event.preventDefault();
-    $("div:radio:checked").remove();
+    $("input:checked").parent().remove();
 });
 
 $("#adminAddCourse").on("click", function(event){
@@ -106,10 +105,34 @@ $.get("/api/registration", function(data){
     if (data) {
         var htmlStr = "";
         for (var i = 0; i < data.length; i++) {
-            htmlStr += "<fieldset> <label for='courses' class='pure-radio'>" +
-                       "<input id='' type='radio' name='courseRadio' value='" + data[i].crs_nm + "'>" +
+            htmlStr += "<fieldset> <label for='courses' class='pure-checkbox'>" +
+                       "<input id='' type='checkbox' name='courseCheckbox' value='" + data[i].crs_nm + "'>" +
                         data[i].crs_nm + ": " + data[i].crs_ds + "</label> </fieldset>"         
         }
         $("#stuCourseData").append(htmlStr);
     }
 });
+
+$("#newCourseRegistration").on ("click", function(event){
+    event.preventDefault();
+    newCourseReg = $(".pure-checkbox");
+    console.log(newCourseReg.length);
+    var registrationStr = "";
+    
+        for (var i=0; i < newCourseReg.length; i++) {
+            var val = $('input:checked').val();
+            if (val){
+                console.log(val);
+                registrationStr += "<div> <label for='courses' class='pure-checkbox'>" +
+                "<input id='' type='checkbox' name='courseCheckbox' value='" + val + "'>" + 
+                "</label> </div>";       
+                }
+            }
+    
+        // window.location.href = "/currently-registered";
+        $("#newCourseRegistration").append(registrationStr); 
+        // console.log("newCourseReg: " , newCourseReg);
+        // console.log("registrationStr: " , registrationStr);
+        // var thingy = JSON.stringify(newCourseRegistration);
+        // console.log(thingy);
+    });
