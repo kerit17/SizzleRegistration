@@ -22,17 +22,33 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/locs/:id", function(req, res) {
+    // app.get("/api/locs/:id", function(req, res) {
+    //     // Here we add an "include" property to our options in our findOne query
+    //     // We set the value to an array of the models we want to include in a left outer join
+    //     // In this case, just db.Course
+    //     db.Location.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //         include: [db.Course]
+    //     }).then(function(dbLocation) {
+    //         res.json(dbLocation);
+    //     });
+    // });
+
+    app.get("/api/locs/:loc_nm", function(req, res) {
+        console.log(req.params.loc_nm);
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Course
         db.Location.findOne({
             where: {
-                id: req.params.id
+                loc_nm: req.params.loc_nm
             },
             include: [db.Course]
         }).then(function(dbLocation) {
-            res.json(dbLocation);
+            console.log(dbLocation);
+            res.send({ id: dbLocation.dataValues.id });
         });
     });
 

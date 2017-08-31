@@ -82,21 +82,32 @@ $("#removeCourseAdmin").on ("click", function(event){
 $("#adminAddCourse").on("click", function(event){
     event.preventDefault();
     
-    var newCourse = {
-        crs_nm : $("#newCourseName").val().trim(),
-        crs_ds : $("#newCourseDescription").val().trim(),
-        LocationId : $("#newLocation").val()
+    var loc_id;
+
+    var loc = {
+        loc_nm: $("#newLocation").val().trim()
     }
 
-    var currentURL = window.location.origin;
+    $.get("/api/locs/" + loc.loc_nm, function(location) {
+        var id = location.id;
+        console.log("hello");
+        console.log("id", id);
+        var newCourse = {
+            crs_nm : $("#newCourseName").val().trim(),
+            crs_ds : $("#newCourseDescription").val().trim(),
+            LocationId : id
+        }
 
-    $.post("/api/courses", newCourse, function(data){
-        if (data){
-            window.location.href = "/admin-portal";
-        }
-        else {
-            alert("Please enter all fields.")
-        }
+        //var currentURL = window.location.origin;
+
+        $.post("/api/courses", newCourse, function(data){
+            if (data){
+              window.location.href = "/admin-portal";
+            }
+            else {
+                alert("Please enter all fields.")
+            }
+        });
     });
 });
 

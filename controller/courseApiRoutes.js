@@ -43,6 +43,7 @@ module.exports = function(app) {
 
     // POST route for saving a new course
     app.post("/api/courses", function(req, res) {
+        console.log(req.body);
         db.Course.create(req.body).then(function(dbCourse) {
             res.json(dbCourse);
         });

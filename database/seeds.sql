@@ -7,10 +7,10 @@ VALUES ('Cullinary 101: Intro to Sautéing Poultry', 'This course builds the fou
 INSERT INTO locations (loc_nm, loc_ds, room_no, createdAt, updatedAt) 
 VALUES ('Main Kitchen Lab', 'Main Kitchen Lab', '100', current_date(), current_date());
 
-/*ALTER TABLE administrators ADD COLUMN password VARCHAR(255) NULL;*/
+ALTER TABLE students ADD COLUMN password VARCHAR(255) NULL;
 
 INSERT INTO administrators (fst_nm, lst_nm, password, createdAt, updatedAt) VALUES ('Francis', 'Link', '123', current_date(), current_date());
 
-/*UPDATE administrators set password = '123' where id = 1;*/
+UPDATE administrators set email = 'abc@abc.com' where id = 1;
 
 
