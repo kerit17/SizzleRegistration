@@ -3,7 +3,7 @@ use sizzleRegistrationDb;
 INSERT INTO locations (loc_nm, loc_ds, room_no, createdAt, updatedAt) 
 VALUES ('Main Kitchen Lab 1', 'Main Kitchen Lab 1', '100', current_date(), current_date());
 
-INSERT INTO administrators (fst_nm, lst_nm, email, password, createdAt, updatedAt) VALUES ('Francis', 'Link', 'abc@abc.com', 123', current_date(), current_date());
+INSERT INTO administrators (fst_nm, lst_nm, email, password, createdAt, updatedAt) VALUES ('Francis', 'Link', 'abc@abc.com', '123', current_date(), current_date());
 
 INSERT INTO courses (crs_nm, crs_ds, crs_dys, crs_str_dt, crs_stp_dt, crs_str_tm, crs_end_tm, LocationId, createdAt, updatedAt)
 VALUES ('Cullinary 101: Intro to Sautéing Poultry', 'This course builds the foundation of cooking poultry using the sauté method. Here you will discover the origins of sauté and why it is used to prepare various meats for consumption.', 'M W', '2017-10-02 17:30', '2017-10-16 21:30', '17:30', '21:30', 1, current_date(), current_date()),
