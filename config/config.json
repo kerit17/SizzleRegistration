@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "sizzleRegistrationDb",
-    "host": "127.0.0.1",
+    "username": "hainguyen",
+    "password": "iWDz3foJgKg2",
+    "database": "hainguyen",
+    "host": "codeflink.net",
     "dialect": "mysql"
   },
   "test": {
